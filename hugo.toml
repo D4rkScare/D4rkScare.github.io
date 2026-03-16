@@ -36,7 +36,7 @@ summaryLength = 60
     slug = "ctf"
     icon = "⚑"
     color = "#f6ad55"
-    description = "CTF 대회 Writeup"
+    description = "WarGame"
     thumbnail = "/images/thumbnails/ctf.png"
 
   [[params.hubs]]
