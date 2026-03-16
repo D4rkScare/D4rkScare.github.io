@@ -63,3 +63,5 @@ summaryLength = 60
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
+uglyURLs = false
+relativeURLs = false
