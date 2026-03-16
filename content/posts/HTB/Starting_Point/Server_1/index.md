@@ -1,9 +1,9 @@
 ---
 title: "Meow"
 date: 2026-03-17T03:32:55+09:00
-draft: false                          ← true → false
+draft: false                         
 categories: ["htb"]
-series: ["HTB Starting Point Tier 0"] ← 시리즈 이름 입력
+series: ["HTB Starting Point Tier 0"] 
 difficulty: "Easy"
 tags: ["nmap", "telnet"]
 thumbnail: ""
