@@ -1,14 +1,14 @@
 ---
-title: "Server_1"
+title: "Meow"
 date: 2026-03-17T03:32:55+09:00
-draft: true
-categories: ["htb"]        # htb / portswigger / ctf / research
-series: [""]               # 단계별 묶음 (Ex. "PortSwigger SQLi Labs", "HTB Starting Point")
-difficulty: "Easy"         # Easy / Medium / Hard / Insane
-tags: []
-thumbnail: ""              # /images/thumbnails/파일명.png
-ctf_name: ""
-points: 0
+draft: false                          ← true → false
+categories: ["htb"]
+series: ["HTB Starting Point Tier 0"] ← 시리즈 이름 입력
+difficulty: "Easy"
+tags: ["nmap", "telnet"]
+thumbnail: ""
+ctf_name: "HackTheBox"
+points: 20
 solves: 0
 flag: ""
 ---
