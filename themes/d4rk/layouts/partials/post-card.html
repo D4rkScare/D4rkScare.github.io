@@ -1,0 +1,48 @@
+<article class="post-card">
+  {{ with .Params.thumbnail }}
+  <a href="{{ $.RelPermalink }}" class="card-thumb">
+    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    {{ with $.Params.difficulty }}
+    <span class="card-diff diff-{{ lower . }}">{{ . }}</span>
+    {{ end }}
+  </a>
+  {{ else }}
+  <a href="{{ $.RelPermalink }}" class="card-thumb card-thumb-placeholder">
+    <span class="thumb-icon">
+      {{ if eq (index $.Params.categories 0) "htb" }}⬡
+      {{ else if eq (index $.Params.categories 0) "portswigger" }}◈
+      {{ else if eq (index $.Params.categories 0) "ctf" }}⚑
+      {{ else }}◎{{ end }}
+    </span>
+    {{ with $.Params.difficulty }}
+    <span class="card-diff diff-{{ lower . }}">{{ . }}</span>
+    {{ end }}
+  </a>
+  {{ end }}
+  <div class="card-body">
+    <div class="card-meta">
+      {{ with .Params.categories }}
+      <span class="card-cat">{{ index . 0 }}</span>
+      {{ end }}
+      <span class="card-date">{{ .Date.Format "2006-01-02" }}</span>
+    </div>
+    <h3 class="card-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+    <p class="card-summary">{{ .Summary | plainify | truncate 80 }}</p>
+    <div class="card-footer">
+      <div class="card-tags">
+        {{ $count := 0 }}
+        {{ range .Params.tags }}
+        {{ if lt $count 3 }}
+        <span class="tag">{{ . }}</span>
+        {{ $count = add $count 1 }}
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ with .Params.points }}
+      <span class="card-pts">{{ . }}pts</span>
+      {{ end }}
+    </div>
+  </div>
+</article>

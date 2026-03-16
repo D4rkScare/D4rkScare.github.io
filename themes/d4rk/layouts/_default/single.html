@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div class="post-wrap">
+  <div class="container">
+    <div class="post-layout">
+
+      <!-- Main content -->
+      <article class="post-main">
+        <!-- Thumbnail -->
+        {{ with .Params.thumbnail }}
+        <div class="post-thumbnail">
+          <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+
+        <!-- Header -->
+        <header class="post-header">
+          <div class="post-badges">
+            {{ with .Params.categories }}
+            <span class="badge-cat">{{ index . 0 }}</span>
+            {{ end }}
+            {{ with .Params.difficulty }}
+            <span class="badge-diff diff-{{ lower . }}">{{ . }}</span>
+            {{ end }}
+            {{ with .Params.series }}
+            <span class="badge-series">{{ index . 0 }}</span>
+            {{ end }}
+          </div>
+          <h1 class="post-title">{{ .Title }}</h1>
+          <div class="post-meta">
+            <span>{{ .Date.Format "2006년 01월 02일" }}</span>
+            <span class="meta-sep">·</span>
+            <span>{{ .ReadingTime }}분 읽기</span>
+            {{ with .Params.ctf_name }}
+            <span class="meta-sep">·</span>
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+
+          <!-- CTF Info Box -->
+          {{ if or .Params.flag .Params.points }}
+          <div class="ctf-box">
+            <div class="ctf-box-title">CTF Info</div>
+            <div class="ctf-box-grid">
+              {{ with .Params.ctf_name }}<div><dt>Event</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{ with .Params.difficulty }}<div><dt>Difficulty</dt><dd class="diff-{{ lower . }}">{{ . }}</dd></div>{{ end }}
+              {{ with .Params.points }}<div><dt>Points</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{ with .Params.solves }}<div><dt>Solves</dt><dd>{{ . }}</dd></div>{{ end }}
+              {{ with .Params.flag }}<div class="flag-row"><dt>Flag</dt><dd class="flag-val">{{ . }}</dd></div>{{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+          <!-- Tags -->
+          {{ with .Params.tags }}
+          <div class="post-tags">
+            {{ range . }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </header>
+
+        <!-- Content -->
+        <div class="post-content">
+          {{ .Content }}
+        </div>
+
+        <!-- Post nav -->
+        <nav class="post-nav">
+          {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" class="post-nav-item post-nav-prev">
+            <span class="nav-label">← Previous</span>
+            <span class="nav-title">{{ .Title }}</span>
+          </a>
+          {{ end }}
+          {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" class="post-nav-item post-nav-next">
+            <span class="nav-label">Next →</span>
+            <span class="nav-title">{{ .Title }}</span>
+          </a>
+          {{ end }}
+        </nav>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="post-sidebar">
+        <!-- TOC -->
+        {{ if .TableOfContents }}
+        <div class="sidebar-widget toc-widget">
+          <div class="widget-title">Table of Contents</div>
+          {{ .TableOfContents }}
+        </div>
+        {{ end }}
+
+        <!-- Series nav (단계별 목차) -->
+        {{ with .Params.series }}
+        {{ $series := index . 0 }}
+        {{ $seriesPages := where $.Site.RegularPages "Params.series" "intersect" (slice $series) }}
+        {{ if gt (len $seriesPages) 1 }}
+        <div class="sidebar-widget series-widget">
+          <div class="widget-title">{{ $series }}</div>
+          <ol class="series-list">
+            {{ range $seriesPages }}
+            <li class="{{ if eq .RelPermalink $.RelPermalink }}active{{ end }}">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <!-- Share -->
+        <div class="sidebar-widget share-widget">
+          <div class="widget-title">Share</div>
+          <div class="share-btns">
+            <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" class="share-btn twitter">Twitter</a>
+            <button onclick="navigator.clipboard.writeText('{{ .Permalink }}')" class="share-btn copy" id="copyBtn">Copy Link</button>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+{{ end }}

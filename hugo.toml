@@ -1,0 +1,65 @@
+baseURL = "https://d4rkscare.github.io/"
+languageCode = "ko-KR"
+title = "D4rkScare"
+theme = "d4rk"
+paginate = 12
+enableRobotsTXT = true
+summaryLength = 60
+
+[params]
+  author = "D4rkScare"
+  role = "Security Researcher & CTF Player"
+  description = "CTF Writeups, Penetration Testing Notes, Security Research"
+  tagline = "Breaking things to understand how they work."
+  github = "https://github.com/D4rkScare"
+  profile_image = "/images/profile/avatar.png"
+
+  # 카테고리 허브 정의 (순서대로 메인에 표시)
+  [[params.hubs]]
+    name = "HackTheBox"
+    slug = "htb"
+    icon = "⬡"
+    color = "#63b3ed"
+    description = "HTB 머신 Writeup 모음"
+    thumbnail = "/images/thumbnails/htb.png"
+
+  [[params.hubs]]
+    name = "PortSwigger"
+    slug = "portswigger"
+    icon = "◈"
+    color = "#68d391"
+    description = "Web Security Academy Labs"
+    thumbnail = "/images/thumbnails/portswigger.png"
+
+  [[params.hubs]]
+    name = "CTF"
+    slug = "ctf"
+    icon = "⚑"
+    color = "#f6ad55"
+    description = "CTF 대회 Writeup"
+    thumbnail = "/images/thumbnails/ctf.png"
+
+  [[params.hubs]]
+    name = "Research"
+    slug = "research"
+    icon = "◎"
+    color = "#b794f4"
+    description = "개인 보안 연구"
+    thumbnail = "/images/thumbnails/research.png"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[markup]
+  [markup.highlight]
+    style = "nord"
+    lineNos = true
+    lineNumbersInTable = false
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4

@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="{{ "/" | relURL }}" class="logo">
+        <span class="logo-mark">D4</span>
+        <span class="logo-text">rkScare</span>
+      </a>
+      <nav class="nav">
+        <a href="{{ "/" | relURL }}" class="{{ if .IsHome }}active{{ end }}">Home</a>
+        <a href="{{ "/posts" | relURL }}" class="{{ if eq .Section "posts" }}active{{ end }}">Writeups</a>
+        <a href="{{ "/categories" | relURL }}" class="{{ if eq .Title "Categories" }}active{{ end }}">Categories</a>
+        <a href="{{ "/about" | relURL }}" class="{{ if eq .Title "About" }}active{{ end }}">About</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-mobile" id="navMobile">
+  <a href="{{ "/" | relURL }}">Home</a>
+  <a href="{{ "/posts" | relURL }}">Writeups</a>
+  <a href="{{ "/categories" | relURL }}">Categories</a>
+  <a href="{{ "/about" | relURL }}">About</a>
+</div>

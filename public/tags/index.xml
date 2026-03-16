@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on D4rkScare</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on D4rkScare</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bypass</title>
+      <link>http://localhost:1313/tags/bypass/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bypass/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql-Injection</title>
+      <link>http://localhost:1313/tags/sql-injection/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Where-Clause</title>
+      <link>http://localhost:1313/tags/where-clause/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/where-clause/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,153 @@
+{{ define "main" }}
+<div class="container">
+
+  {{ if eq .Kind "taxonomy" }}
+  <div class="cat-page">
+    <div class="cat-page-header">
+      {{ $slug := .Data.Term }}
+      {{ range $.Site.Params.hubs }}
+        {{ if eq .slug $slug }}
+        <div class="cat-hero" style="--cat-color: {{ .color }}">
+          {{ with .thumbnail }}<img src="{{ . }}" alt="{{ $.Title }}" class="cat-hero-bg">{{ end }}
+          <div class="cat-hero-inner">
+            <span class="cat-hero-icon">{{ .icon }}</span>
+            <h1 class="cat-hero-title">{{ $.Title }}</h1>
+            <p class="cat-hero-desc">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    {{ $pages := .Pages }}
+    {{ $series := slice }}
+    {{ range $pages }}
+      {{ range .Params.series }}
+        {{ $series = $series | append . | uniq }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $series) 0 }}
+    {{ range $series }}
+    {{ $s := . }}
+    {{ $sPages := where $pages "Params.series" "intersect" (slice $s) }}
+    <div class="series-group">
+      <div class="series-group-header">
+        <h2 class="series-group-title">{{ $s }}</h2>
+        <span class="series-group-count">{{ len $sPages }} posts</span>
+      </div>
+      <div class="posts-list">
+        {{ range $sPages }}
+        <a href="{{ .RelPermalink }}" class="post-row">
+          <div class="row-left">
+            {{ with .Params.thumbnail }}
+            <img src="{{ . }}" alt="{{ $.Title }}" class="row-thumb">
+            {{ else }}
+            <div class="row-thumb-ph">◈</div>
+            {{ end }}
+          </div>
+          <div class="row-center">
+            <h3 class="row-title">{{ .Title }}</h3>
+            <p class="row-summary">{{ .Summary | plainify | truncate 80 }}</p>
+            <div class="row-tags">
+              {{ $count := 0 }}
+              {{ range .Params.tags }}
+              {{ if lt $count 4 }}
+              <span class="tag">{{ . }}</span>
+              {{ $count = add $count 1 }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          <div class="row-right">
+            {{ with .Params.difficulty }}
+            <span class="diff-badge diff-{{ lower . }}">{{ . }}</span>
+            {{ end }}
+            {{ with .Params.points }}<span class="row-pts">{{ . }}pts</span>{{ end }}
+            <span class="row-date">{{ .Date.Format "01-02" }}</span>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{ $noSeries := where $pages "Params.series" nil }}
+    {{ if $noSeries }}
+    <div class="series-group">
+      <div class="series-group-header">
+        <h2 class="series-group-title">기타</h2>
+      </div>
+      <div class="posts-list">
+        {{ range $noSeries }}
+        <a href="{{ .RelPermalink }}" class="post-row">
+          <div class="row-center">
+            <h3 class="row-title">{{ .Title }}</h3>
+            <div class="row-tags">
+              {{ $count := 0 }}
+              {{ range .Params.tags }}
+              {{ if lt $count 3 }}
+              <span class="tag">{{ . }}</span>
+              {{ $count = add $count 1 }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          <div class="row-right">
+            {{ with .Params.difficulty }}<span class="diff-badge diff-{{ lower . }}">{{ . }}</span>{{ end }}
+            <span class="row-date">{{ .Date.Format "01-02" }}</span>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{ else }}
+    <div class="posts-grid" style="margin-top:32px">
+      {{ range $pages }}
+      {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{ else if eq .Kind "taxonomyTerm" }}
+  <div class="page-header">
+    <h1 class="page-title">Categories</h1>
+  </div>
+  <div class="hub-grid">
+    {{ range $.Site.Params.hubs }}
+    {{ $slug := .slug }}
+    {{ $posts := where $.Site.RegularPages "Params.categories" "intersect" (slice $slug) }}
+    <a href="{{ "/categories/" | relURL }}{{ $slug }}" class="hub-card">
+      <div class="hub-thumb" style="{{ with .thumbnail }}background-image:url('{{ . }}'){{ end }}">
+        <div class="hub-thumb-overlay"></div>
+        <span class="hub-icon" style="color:{{ .color }}">{{ .icon }}</span>
+      </div>
+      <div class="hub-body">
+        <div class="hub-name" style="color:{{ .color }}">{{ .name }}</div>
+        <div class="hub-desc">{{ .description }}</div>
+        <div class="hub-footer">
+          <span class="hub-count">{{ len $posts }} posts</span>
+          <span class="hub-arrow">→</span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ else }}
+  <div class="page-header">
+    <h1 class="page-title">{{ if .IsHome }}All Writeups{{ else }}{{ .Title }}{{ end }}</h1>
+  </div>
+  <div class="posts-grid">
+    {{ range .Pages }}
+    {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+  {{ partial "pagination.html" . }}
+  {{ end }}
+
+</div>
+{{ end }}
