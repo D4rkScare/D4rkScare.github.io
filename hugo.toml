@@ -44,7 +44,7 @@ summaryLength = 60
     slug = "research"
     icon = "◎"
     color = "#b794f4"
-    description = "개인 보안 연구"
+    description = "개발, 연구"
     thumbnail = "/images/thumbnails/research.png"
 
 [taxonomies]
