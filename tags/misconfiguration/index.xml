@@ -7,7 +7,7 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;결과:&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;PORT STATE SERVICE VERSION
 23/tcp open telnet Linux telnetd
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="1_nmap.png" alt="nmap 결과"&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="meow_img/1.png" alt="nmap 결과"&gt;&lt;/p&gt;
 &lt;p&gt;Telnet 포트 23번이 열려있는 것을 확인했습니다.&lt;/p&gt;
 &lt;h2 id="exploitation"&gt;Exploitation&lt;/h2&gt;
 &lt;h3 id="telnet-접속"&gt;Telnet 접속&lt;/h3&gt;
