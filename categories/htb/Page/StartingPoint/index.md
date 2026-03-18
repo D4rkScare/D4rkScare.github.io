@@ -10,19 +10,20 @@ thumbnail: ""
 ctf_name: "HackTheBox"
 points: 20
 solves: 99999
-flag: "FLAG{여기에_실제_플래그}"
+flag: "FLAG{b40abdfe23665f766f9c61ecba8a4c19}"
 ---
 
 ## Overview
 
 Meow는 HTB Starting Point의 첫 번째 머신으로, Telnet 서비스의 잘못된 설정을 이용해 접근하는 매우 간단한 Linux 머신입니다.
+Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였습니다.
 
 ## Enumeration
 
 ### Nmap 포트 스캔
 
 ```bash
-nmap -sV -sC -oN nmap.txt 10.129.x.x
+nmap -sV -sC -oN nmap.txt 10.129.1.17
 ```
 
 결과:
@@ -41,7 +42,7 @@ Telnet 포트 23번이 열려있는 것을 확인했습니다.
 ### Telnet 접속
 
 ```bash
-telnet 10.129.x.x
+telnet 10.129.1.17
 ```
 
 로그인 프롬프트에서 `root` 로 로그인 시도합니다:
@@ -52,7 +53,7 @@ Meow login: root
 
 비밀번호 없이 root 로그인 성공!
 
-![telnet 접속](2_telnet.png)
+![telnet 접속](/img/3.png)
 
 ### 플래그 획득
 
@@ -61,7 +62,7 @@ ls
 cat flag.txt
 ```
 
-![플래그](3_flag.png)
+![플래그](/meow_img/4.png)
 
 ## Summary
 
@@ -74,5 +75,5 @@ cat flag.txt
 ## Flag
 
 ```
-FLAG{여기에_실제_플래그}
+FLAG{b40abdfe23665f766f9c61ecba8a4c19}
 ```
