@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>D4rkScare</title><link>https://d4rkscare.github.io/</link><description>Recent content on D4rkScare</description><generator>Hugo</generator><language>ko-KR</language><lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://d4rkscare.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>SQL Injection - Lab 1: WHERE clause</title><link>https://d4rkscare.github.io/posts/portswigger-sqli-lab1/</link><pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate><guid>https://d4rkscare.github.io/posts/portswigger-sqli-lab1/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>D4rkScare</title><link>https://d4rkscare.github.io/</link><description>Recent content on D4rkScare</description><generator>Hugo</generator><language>ko-KR</language><lastBuildDate>Tue, 17 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://d4rkscare.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Meow - Starting Point Tier 0</title><link>https://d4rkscare.github.io/posts/htb/starting_point/meow/</link><pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate><guid>https://d4rkscare.github.io/posts/htb/starting_point/meow/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Meow는 HTB Starting Point의 첫 번째 머신으로, Telnet 서비스의 잘못된 설정을 이용해 접근하는 매우 간단한 Linux 머신입니다.
+Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였습니다.&lt;/p&gt;
+&lt;h2 id="enumeration"&gt;Enumeration&lt;/h2&gt;
+&lt;h3 id="nmap-포트-스캔"&gt;Nmap 포트 스캔&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74"&gt;1&lt;/span&gt;&lt;span&gt;nmap -sV -sC -oN nmap.txt 10.129.1.17
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;결과:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;PORT STATE SERVICE VERSION
+23/tcp open telnet Linux telnetd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="1_nmap.png" alt="nmap 결과"&gt;&lt;/p&gt;
+&lt;p&gt;Telnet 포트 23번이 열려있는 것을 확인했습니다.&lt;/p&gt;
+&lt;h2 id="exploitation"&gt;Exploitation&lt;/h2&gt;
+&lt;h3 id="telnet-접속"&gt;Telnet 접속&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74"&gt;1&lt;/span&gt;&lt;span&gt;telnet 10.129.1.17
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;로그인 프롬프트에서 &lt;code&gt;root&lt;/code&gt; 로 로그인 시도합니다:&lt;/p&gt;</description></item><item><title>SQL Injection - Lab 1: WHERE clause</title><link>https://d4rkscare.github.io/posts/portswigger-sqli-lab1/</link><pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate><guid>https://d4rkscare.github.io/posts/portswigger-sqli-lab1/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 &lt;p&gt;SQL injection 취약점을 이용해 WHERE 절을 우회하는 기초 랩입니다.&lt;/p&gt;
 &lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
 &lt;h3 id="문제-설명"&gt;문제 설명&lt;/h3&gt;
