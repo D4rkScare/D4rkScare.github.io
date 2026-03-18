@@ -110,7 +110,7 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
 </span></span></code></pre></div><p>결과:</p>
 <pre tabindex="0"><code>PORT   STATE SERVICE VERSION
 23/tcp open  telnet  Linux telnetd
-</code></pre><p><img src="1_nmap.png" alt="nmap 결과"></p>
+</code></pre><p><img src="meow_img/1.png" alt="nmap 결과"></p>
 <p>Telnet 포트 23번이 열려있는 것을 확인했습니다.</p>
 <h2 id="exploitation">Exploitation</h2>
 <h3 id="telnet-접속">Telnet 접속</h3>
@@ -118,11 +118,11 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
 </span></span></code></pre></div><p>로그인 프롬프트에서 <code>root</code> 로 로그인 시도합니다:</p>
 <pre tabindex="0"><code>Meow login: root
 </code></pre><p>비밀번호 없이 root 로그인 성공!</p>
-<p><img src="/img/3.png" alt="telnet 접속"></p>
+<p><img src="meow_img/3.png" alt="telnet 접속"></p>
 <h3 id="플래그-획득">플래그 획득</h3>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74">1</span><span>ls
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74">2</span><span>cat flag.txt
-</span></span></code></pre></div><p><img src="/meow_img/4.png" alt="플래그"></p>
+</span></span></code></pre></div><p><img src="meow_img/4.png" alt="플래그"></p>
 <h2 id="summary">Summary</h2>
 <table>
   <thead>

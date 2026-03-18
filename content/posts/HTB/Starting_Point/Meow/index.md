@@ -33,7 +33,7 @@ PORT   STATE SERVICE VERSION
 23/tcp open  telnet  Linux telnetd
 ```
 
-![nmap 결과](1_nmap.png)
+![nmap 결과](meow_img/1.png)
 
 Telnet 포트 23번이 열려있는 것을 확인했습니다.
 
@@ -53,7 +53,7 @@ Meow login: root
 
 비밀번호 없이 root 로그인 성공!
 
-![telnet 접속](/img/3.png)
+![telnet 접속](meow_img/3.png)
 
 ### 플래그 획득
 
@@ -62,7 +62,7 @@ ls
 cat flag.txt
 ```
 
-![플래그](/meow_img/4.png)
+![플래그](meow_img/4.png)
 
 ## Summary
 
