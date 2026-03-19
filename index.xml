@@ -27,7 +27,7 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74"&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style="color:#81a1c1;font-weight:bold"&gt;SELECT&lt;/span&gt; &lt;span style="color:#81a1c1"&gt;*&lt;/span&gt; &lt;span style="color:#81a1c1;font-weight:bold"&gt;FROM&lt;/span&gt; products &lt;span style="color:#81a1c1;font-weight:bold"&gt;WHERE&lt;/span&gt; category &lt;span style="color:#81a1c1"&gt;=&lt;/span&gt; &lt;span style="color:#a3be8c"&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style="color:#81a1c1;font-weight:bold"&gt;OR&lt;/span&gt; &lt;span style="color:#b48ead"&gt;1&lt;/span&gt;&lt;span style="color:#81a1c1"&gt;=&lt;/span&gt;&lt;span style="color:#b48ead"&gt;1&lt;/span&gt;&lt;span style="color:#616e87;font-style:italic"&gt;--&amp;#39; AND released = 1
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="flag"&gt;Flag&lt;/h2&gt;
 &lt;p&gt;Lab Solved ✅&lt;/p&gt;</description></item><item><title>About</title><link>https://d4rkscare.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://d4rkscare.github.io/about/</guid><description>&lt;h2 id="안녕하세요-d4rkscare입니다-"&gt;안녕하세요, D4rkScare입니다 👋&lt;/h2&gt;
-&lt;p&gt;저는 보안에 관심이 많은 &lt;strong&gt;Security Researcher &amp;amp; CTF Player&lt;/strong&gt;입니다. HackTheBox, PortSwigger Web Security Academy, 각종 CTF 대회에 참가하며 공격 기법과 방어 전략을 연구하고 있습니다.&lt;/p&gt;
+&lt;p&gt;저는 보안에 관심이 많은 &lt;strong&gt;PENETESTER PLAYER&lt;/strong&gt;입니다. HackTheBox, PortSwigger Web Security Academy, TRYHACKME 각종 WARGAME에 참가하며 공격 기법과 방어 전략을 학습하고 있습니다.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="skills"&gt;Skills&lt;/h2&gt;
 &lt;table&gt;
@@ -47,12 +47,12 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
  &lt;td&gt;Nmap, Wireshark, Netcat, Burp Suite&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
- &lt;td&gt;Reverse&lt;/td&gt;
- &lt;td&gt;Ghidra, GDB, pwndbg&lt;/td&gt;
+ &lt;td&gt;IOT&lt;/td&gt;
+ &lt;td&gt;ARDUINO&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Crypto&lt;/td&gt;
- &lt;td&gt;RSA, Hash analysis, XOR&lt;/td&gt;
+ &lt;td&gt;WALLET phrase BruteForce&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;OSINT&lt;/td&gt;
@@ -60,7 +60,7 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Languages&lt;/td&gt;
- &lt;td&gt;Python, Bash, JavaScript&lt;/td&gt;
+ &lt;td&gt;Python, Bash, C, HTML&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -69,8 +69,8 @@ Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였�
 &lt;ul&gt;
 &lt;li&gt;🟦 HackTheBox — Active Player&lt;/li&gt;
 &lt;li&gt;🟩 PortSwigger Web Security Academy — In Progress&lt;/li&gt;
-&lt;li&gt;⚑ CTF Competitions — Active Participant&lt;/li&gt;
+&lt;li&gt;⚑ IOT — 도, 전국대회 우승자&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="이-블로그에-대해"&gt;이 블로그에 대해&lt;/h2&gt;
-&lt;p&gt;이 블로그는 제가 CTF 문제를 풀거나 보안 연구를 하면서 배운 내용을 정리하는 공간입니다. Writeup을 작성하며 복습하고, 다른 사람들에게도 도움이 되었으면 합니다.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;이 블로그는 제가 WARGAME 문제를 풀거나 보안 연구를 하면서 배운 내용을 정리하는 공간입니다. Writeup을 작성하며 복습하고, 다른 사람들에게도 도움이 되었으면 합니다.&lt;/p&gt;</description></item></channel></rss>
