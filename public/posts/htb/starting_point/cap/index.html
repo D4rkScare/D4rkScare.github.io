@@ -68,7 +68,7 @@
           <div class="post-meta">
             <span>2026년 03월 18일</span>
             <span class="meta-sep">·</span>
-            <span>1분 읽기</span>
+            <span>2분 읽기</span>
             
             <span class="meta-sep">·</span>
             <span>HackTheBox</span>
@@ -106,24 +106,49 @@ PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
 80/tcp open  http    Gunicorn</p>
 <h3 id="기능-파악">기능 파악</h3>
-<p><img src="/Cap_img/2.png" alt="페이지 1">
-<img src="/Cap_img/3.png" alt="페이지 2">
-<img src="/Cap_img/4.png" alt="페이지 3">
-<img src="/Cap_img/5.png" alt="페이지 4"></p>
+<p><img src="2.png" alt="페이지 1">
+<img src="3.png" alt="페이지 2">
+<img src="4.png" alt="페이지 3">
+<img src="5.png" alt="페이지 4"></p>
+<p>!!중요!!
+Dash board /data/0에서 PCAP 파일 다운로드 가능</p>
 <ol>
 <li>DashBoard, ipconfig 내용(/data), Pcap 내용 (각종 디렉토리 경로 파악 가능)</li>
 </ol>
-<h2 id="analysis">Analysis</h2>
-<p>현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황</p>
-<ol>
-<li>예상 공격 체인</li>
-</ol>
+<p>##$ Analysis
+현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황
+OR WIRESHARK로 인한 패킷 분석</p>
+<h2 id="1-예상-공격-체인">1. 예상 공격 체인</h2>
 <pre tabindex="0"><code>FTP Anonymous -&gt; Gunicorn version find &amp; exploit
 -&gt; ssh -&gt; 권한 상승 -&gt; FLAG
-</code></pre><h2 id="exploitation">Exploitation</h2>
-<h2 id="flag">Flag</h2>
-<pre tabindex="0"><code>FLAG{...}
-</code></pre>
+</code></pre><h2 id="2-각종-시도-후-결과">2. 각종 시도 후 결과</h2>
+<p>이 페이지에서는 웹 해킹이 의미가 있는지 생각이 났으며
+기능 부분 중 PCAP 파일을 받아 FTP 혹은 SSH 접속 가능한 힌트가 있는지 확인해 보았습니다.
+<img src="7.png" alt="PCAP">
+PCAP 파일 다운로드
+<img src="6.png" alt="WireShark">
+WireSark를 통해 확인 결과
+HTTP, TCP, FTP 등 프로토콜 확인 가능
+<img src="8.png" alt="Pass"></p>
+<pre tabindex="0"><code>USER:nathan Pass: Buck3tH4TF0RM3!
+</code></pre><p>이 계정을 통해 FTP, SSH 접속 시도결과
+SSH 접속 성공
+<img src="9.png" alt="SSH"></p>
+<h2 id="user-flag">USER FLAG</h2>
+<pre tabindex="0"><code>USER_FLAG: 540f8558de7646a7e0784f3d62c5b6f2
+</code></pre><h3 id="exploitation">Exploitation</h3>
+<p>권한 상승으로 기본적인 것 부터 시도합니다.
+python version 3.8을 사용하는 것을 확인하였습니다.
+<img src="10.png" alt="privilleage"></p>
+<pre tabindex="0"><code>Source Code:
+import os
+os.setuid(0)
+os.system(&#34;/bin/bash&#34;)
+</code></pre><h2 id="root-flag">ROOT Flag</h2>
+<pre tabindex="0"><code>ROOT FLAG{5bfce0b6e9760336e664cfc001b2d688}
+</code></pre><h3 id="느낀점">느낀점</h3>
+<p>이번 서버는 Easy인 만큼 웹 해킹이 필요없고 권한 상승 스킬도 필요없는 서버였지만 다시한번 와이어 샤크를 사용해본 경험을 하게 되었습니다.</p>
+
         </div>
 
         
@@ -152,9 +177,18 @@ PORT   STATE SERVICE VERSION
         <li><a href="#기능-파악">기능 파악</a></li>
       </ul>
     </li>
-    <li><a href="#analysis">Analysis</a></li>
-    <li><a href="#exploitation">Exploitation</a></li>
-    <li><a href="#flag">Flag</a></li>
+    <li><a href="#1-예상-공격-체인">1. 예상 공격 체인</a></li>
+    <li><a href="#2-각종-시도-후-결과">2. 각종 시도 후 결과</a></li>
+    <li><a href="#user-flag">USER FLAG</a>
+      <ul>
+        <li><a href="#exploitation">Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#root-flag">ROOT Flag</a>
+      <ul>
+        <li><a href="#느낀점">느낀점</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>

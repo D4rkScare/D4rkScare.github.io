@@ -28,27 +28,63 @@ PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
 80/tcp open  http    Gunicorn
 ### 기능 파악
-![페이지 1](/Cap_img/2.png)
-![페이지 2](/Cap_img/3.png)
-![페이지 3](/Cap_img/4.png)
-![페이지 4](/Cap_img/5.png)
+![페이지 1](2.png)
+![페이지 2](3.png)
+![페이지 3](4.png)
+![페이지 4](5.png)
+
+!!중요!!
+Dash board /data/0에서 PCAP 파일 다운로드 가능
 
 1. DashBoard, ipconfig 내용(/data), Pcap 내용 (각종 디렉토리 경로 파악 가능)
 
-## Analysis
+##$ Analysis
 현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황
+OR WIRESHARK로 인한 패킷 분석
 
-1. 예상 공격 체인
+## 1. 예상 공격 체인
 
 ```
 FTP Anonymous -> Gunicorn version find & exploit
 -> ssh -> 권한 상승 -> FLAG
 ```
 
-## Exploitation
+## 2. 각종 시도 후 결과
+이 페이지에서는 웹 해킹이 의미가 있는지 생각이 났으며
+기능 부분 중 PCAP 파일을 받아 FTP 혹은 SSH 접속 가능한 힌트가 있는지 확인해 보았습니다.
+![PCAP](7.png)
+PCAP 파일 다운로드
+![WireShark](6.png)
+WireSark를 통해 확인 결과 
+HTTP, TCP, FTP 등 프로토콜 확인 가능
+![Pass](8.png)
+```
+USER:nathan Pass: Buck3tH4TF0RM3!
+```
+이 계정을 통해 FTP, SSH 접속 시도결과 
+SSH 접속 성공
+![SSH](9.png)
 
-## Flag
+## USER FLAG
+``` 
+USER_FLAG: 540f8558de7646a7e0784f3d62c5b6f2
+```
+### Exploitation
+권한 상승으로 기본적인 것 부터 시도합니다.
+python version 3.8을 사용하는 것을 확인하였습니다.
+![privilleage](10.png)
 
 ```
-FLAG{...}
+Source Code:
+import os
+os.setuid(0)
+os.system("/bin/bash")
 ```
+## ROOT Flag
+
+```
+ROOT FLAG{5bfce0b6e9760336e664cfc001b2d688}
+```
+
+### 느낀점
+이번 서버는 Easy인 만큼 웹 해킹이 필요없고 권한 상승 스킬도 필요없는 서버였지만 다시한번 와이어 샤크를 사용해본 경험을 하게 되었습니다.
