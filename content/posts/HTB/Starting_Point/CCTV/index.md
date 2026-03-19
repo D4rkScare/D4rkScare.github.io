@@ -18,8 +18,7 @@ flag: "Active Machine이기 때문에 Flag를 작성 할 수 없습니다."
 
 ## 풀이 인증
 ![인증](2.png)
-```
-```
+
 ## Overview
 
 
