@@ -14,11 +14,11 @@ flag: "Active Machine이기 때문에 Flag를 작성 할 수 없습니다."
 ---
 
 ### Active Machine이기에 Flag는 작성하지 않습니다.
+### 인터넷 상의 풀이도 없습니다!
 
 ## 풀이 인증
-```
 ![인증](2.png)
-
+```
 ```
 ## Overview
 
