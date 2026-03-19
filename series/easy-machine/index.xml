@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Easy Machine on D4rkScare</title><link>https://d4rkscare.github.io/series/easy-machine/</link><description>Recent content in Easy Machine on D4rkScare</description><generator>Hugo</generator><language>ko-KR</language><lastBuildDate>Thu, 19 Mar 2026 16:54:05 +0900</lastBuildDate><atom:link href="https://d4rkscare.github.io/series/easy-machine/index.xml" rel="self" type="application/rss+xml"/><item><title>CCTV</title><link>https://d4rkscare.github.io/posts/htb/starting_point/cctv/</link><pubDate>Thu, 19 Mar 2026 16:54:05 +0900</pubDate><guid>https://d4rkscare.github.io/posts/htb/starting_point/cctv/</guid><description>&lt;h3 id="active-machine이기에-flag는-작성하지-않습니다"&gt;Active Machine이기에 Flag는 작성하지 않습니다.&lt;/h3&gt;
+&lt;h2 id="풀이-인증"&gt;풀이 인증&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;![인증](2.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;h2 id="analysis"&gt;Analysis&lt;/h2&gt;
+&lt;h3 id="initial-recon"&gt;Initial Recon&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="exploitation"&gt;Exploitation&lt;/h2&gt;
+&lt;h2 id="flag"&gt;Flag&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;FLAG{...}
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
