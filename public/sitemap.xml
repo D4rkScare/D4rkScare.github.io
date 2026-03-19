@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/htb/starting_point/cctv/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/easy-machine/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/htb/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2026-03-19T16:54:05+09:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/htb/starting_point/cap/</loc>
     <lastmod>2026-03-18T22:02:51+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/series/htb-machine/</loc>
     <lastmod>2026-03-18T22:02:51+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/tags/packet-capture-analysis/</loc>
     <lastmod>2026-03-18T22:02:51+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/htb/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-18T22:02:51+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/tags/web-enumeration/</loc>
     <lastmod>2026-03-18T22:02:51+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/htb-starting-point-tier-0/</loc>
@@ -27,12 +48,6 @@
     <lastmod>2026-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/nmap/</loc>
-    <lastmod>2026-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2026-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/telnet/</loc>
@@ -57,5 +72,7 @@
     <lastmod>2026-03-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/series/htb-sarting-point/</loc>
   </url>
 </urlset>

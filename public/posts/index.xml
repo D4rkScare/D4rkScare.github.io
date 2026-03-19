@@ -6,14 +6,21 @@
     <description>Recent content in Posts on D4rkScare</description>
     <generator>Hugo</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 18 Mar 2026 22:02:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 16:54:05 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cap</title>
+      <title>CCTV</title>
+      <link>http://localhost:1313/posts/htb/starting_point/cctv/</link>
+      <pubDate>Thu, 19 Mar 2026 16:54:05 +0900</pubDate>
+      <guid>http://localhost:1313/posts/htb/starting_point/cctv/</guid>
+      <description>&lt;h3 id=&#34;active-machine이기에-flag는-작성하지-않습니다&#34;&gt;Active Machine이기에 Flag는 작성하지 않습니다.&lt;/h3&gt;&#xA;&lt;h2 id=&#34;풀이-인증&#34;&gt;풀이 인증&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![인증](2.png)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;h2 id=&#34;analysis&#34;&gt;Analysis&lt;/h2&gt;&#xA;&lt;h3 id=&#34;initial-recon&#34;&gt;Initial Recon&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h2&gt;&#xA;&lt;h2 id=&#34;flag&#34;&gt;Flag&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FLAG{...}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Cap - Easy Machine</title>
       <link>http://localhost:1313/posts/htb/starting_point/cap/</link>
       <pubDate>Wed, 18 Mar 2026 22:02:51 +0900</pubDate>
       <guid>http://localhost:1313/posts/htb/starting_point/cap/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;h2 id=&#34;analysis&#34;&gt;Analysis&lt;/h2&gt;&#xA;&lt;h3 id=&#34;initial-recon&#34;&gt;Initial Recon&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h2&gt;&#xA;&lt;h2 id=&#34;flag&#34;&gt;Flag&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FLAG{...}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Cap은 HTTP 서버를 실행하는 난이도가 쉬운 Linux 시스템으로, 네트워크 캡처를 포함한 관리 기능을 수행합니다. 보안 제어가 제대로 이루어지지 않으면 IDOR(Insecure Direct Object Reference) 취약점을 통해 다른 사용자의 캡처 파일에 접근할 수 있게 됩니다. 캡처 파일에는 평문으로 된 자격 증명이 포함되어 있으며, 이를 이용해 시스템에 대한 접근 권한을 획득할 수 있습니다. 이후 Linux 시스템의 취약점을 악용하여 루트 권한으로 상승할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meow - Starting Point Tier 0</title>

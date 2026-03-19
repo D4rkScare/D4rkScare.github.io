@@ -6,8 +6,15 @@
     <description>Recent content in Series on D4rkScare</description>
     <generator>Hugo</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 18 Mar 2026 22:02:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 16:54:05 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Easy Machine</title>
+      <link>http://localhost:1313/series/easy-machine/</link>
+      <pubDate>Thu, 19 Mar 2026 16:54:05 +0900</pubDate>
+      <guid>http://localhost:1313/series/easy-machine/</guid>
+      <description></description>
+    </item>
     <item>
       <title>HTB Machine</title>
       <link>http://localhost:1313/series/htb-machine/</link>
