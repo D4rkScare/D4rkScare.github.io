@@ -6,14 +6,21 @@
     <description>Recent content on D4rkScare</description>
     <generator>Hugo</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 17 Mar 2026 03:32:55 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 22:02:51 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Meow</title>
-      <link>http://localhost:1313/posts/htb/starting_point/server_1/</link>
-      <pubDate>Tue, 17 Mar 2026 03:32:55 +0900</pubDate>
-      <guid>http://localhost:1313/posts/htb/starting_point/server_1/</guid>
+      <title>Cap</title>
+      <link>http://localhost:1313/posts/htb/starting_point/cap/</link>
+      <pubDate>Wed, 18 Mar 2026 22:02:51 +0900</pubDate>
+      <guid>http://localhost:1313/posts/htb/starting_point/cap/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;h2 id=&#34;analysis&#34;&gt;Analysis&lt;/h2&gt;&#xA;&lt;h3 id=&#34;initial-recon&#34;&gt;Initial Recon&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h2&gt;&#xA;&lt;h2 id=&#34;flag&#34;&gt;Flag&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FLAG{...}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Meow - Starting Point Tier 0</title>
+      <link>http://localhost:1313/posts/htb/starting_point/meow/</link>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/htb/starting_point/meow/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Meow는 HTB Starting Point의 첫 번째 머신으로, Telnet 서비스의 잘못된 설정을 이용해 접근하는 매우 간단한 Linux 머신입니다.&#xA;Github와 HUGO를 최근 알게 되었기에 3-18일 부터 작성 시작하였습니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h2&gt;&#xA;&lt;h3 id=&#34;nmap-포트-스캔&#34;&gt;Nmap 포트 스캔&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1&lt;/span&gt;&lt;span&gt;nmap -sV -sC -oN nmap.txt 10.129.1.17&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;결과:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PORT   STATE SERVICE VERSION&#xA;23/tcp open  telnet  Linux telnetd&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;meow_img/1.png&#34; alt=&#34;nmap 결과&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Telnet 포트 23번이 열려있는 것을 확인했습니다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;telnet-접속&#34;&gt;Telnet 접속&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1&lt;/span&gt;&lt;span&gt;telnet 10.129.1.17&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;로그인 프롬프트에서 &lt;code&gt;root&lt;/code&gt; 로 로그인 시도합니다:&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQL Injection - Lab 1: WHERE clause</title>

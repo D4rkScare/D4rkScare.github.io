@@ -8,7 +8,7 @@ difficulty: "Easy"
 tags: ["nmap", "telnet", "misconfiguration"]
 thumbnail: ""
 ctf_name: "HackTheBox"
-points: 20
+points: 0
 solves: 99999
 flag: "FLAG{b40abdfe23665f766f9c61ecba8a4c19}"
 ---
