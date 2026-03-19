@@ -61,7 +61,7 @@
             <span class="badge-diff diff-easy">Easy</span>
             
             
-            <span class="badge-series">HTB Sarting Point</span>
+            <span class="badge-series">HTB Machine</span>
             
           </div>
           <h1 class="post-title">Cap</h1>
@@ -116,11 +116,11 @@ PORT   STATE SERVICE VERSION
 <h2 id="analysis">Analysis</h2>
 <p>현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황</p>
 <ol>
-<li>예상 공격 체인
-FTP Anonymous -&gt; Gunicorn version find &amp; exploit
--&gt; ssh -&gt; 권한 상승 -&gt; FLAG</li>
+<li>예상 공격 체인</li>
 </ol>
-<pre tabindex="0"><code></code></pre><h2 id="exploitation">Exploitation</h2>
+<pre tabindex="0"><code>FTP Anonymous -&gt; Gunicorn version find &amp; exploit
+-&gt; ssh -&gt; 권한 상승 -&gt; FLAG
+</code></pre><h2 id="exploitation">Exploitation</h2>
 <h2 id="flag">Flag</h2>
 <pre tabindex="0"><code>FLAG{...}
 </code></pre>

@@ -3,7 +3,7 @@ title: "Cap"
 date: 2026-03-18T22:02:51+09:00
 draft: false
 categories: ["htb"]        # htb / portswigger / ctf / research
-series: ["HTB Sarting Point"]               # 단계별 묶음 (Ex. "PortSwigger SQLi Labs", "HTB Starting Point")
+series: ["HTB Machine"]               # 단계별 묶음 (Ex. "PortSwigger SQLi Labs", "HTB Starting Point")
 difficulty: "Easy"         # Easy / Medium / Hard / Insane
 tags: ["Web enumeration", "Packet capture analysis"]
 thumbnail: "1.png"              # /images/thumbnails/파일명.png
@@ -39,11 +39,10 @@ PORT   STATE SERVICE VERSION
 현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황
 
 1. 예상 공격 체인
-FTP Anonymous -> Gunicorn version find & exploit
--> ssh -> 권한 상승 -> FLAG
 
 ```
-
+FTP Anonymous -> Gunicorn version find & exploit
+-> ssh -> 권한 상승 -> FLAG
 ```
 
 ## Exploitation
