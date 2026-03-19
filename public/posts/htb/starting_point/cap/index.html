@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cap · D4rkScare</title>
+  <title>Cap - Easy Machine · D4rkScare</title>
   <meta name="description" content="CTF Writeups, Penetration Testing Notes, Security Research">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         
         
         <div class="post-thumbnail">
-          <img src="1.png" alt="Cap">
+          <img src="1.png" alt="Cap - Easy Machine">
         </div>
         
 
@@ -64,7 +64,7 @@
             <span class="badge-series">HTB Machine</span>
             
           </div>
-          <h1 class="post-title">Cap</h1>
+          <h1 class="post-title">Cap - Easy Machine</h1>
           <div class="post-meta">
             <span>2026년 03월 18일</span>
             <span class="meta-sep">·</span>
@@ -95,16 +95,7 @@
           <h2 id="overview">Overview</h2>
 <p>Cap은 HTTP 서버를 실행하는 난이도가 쉬운 Linux 시스템으로, 네트워크 캡처를 포함한 관리 기능을 수행합니다. 보안 제어가 제대로 이루어지지 않으면 IDOR(Insecure Direct Object Reference) 취약점을 통해 다른 사용자의 캡처 파일에 접근할 수 있게 됩니다. 캡처 파일에는 평문으로 된 자격 증명이 포함되어 있으며, 이를 이용해 시스템에 대한 접근 권한을 획득할 수 있습니다. 이후 Linux 시스템의 취약점을 악용하여 루트 권한으로 상승할 수 있습니다.</p>
 <h3 id="nmap-포트-스캔-정찰">Nmap 포트 스캔 (정찰)</h3>
-<p>┌──(d4rkscare㉿kr0pt)-[/mnt/c/Users/gohun/Desktop]
-└─$ sudo nmap -sV 10.129.5.103
-Starting Nmap 7.95 ( <a href="https://nmap.org">https://nmap.org</a> ) at 2026-03-19 15:52 KST
-Nmap scan report for 10.129.5.103
-Host is up (0.21s latency).
-Not shown: 997 closed tcp ports (reset)
-PORT   STATE SERVICE VERSION
-21/tcp open  ftp     vsftpd 3.0.3
-22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
-80/tcp open  http    Gunicorn</p>
+<p><img src="1.png" alt="nmap"></p>
 <h3 id="기능-파악">기능 파악</h3>
 <p><img src="2.png" alt="페이지 1">
 <img src="3.png" alt="페이지 2">
@@ -115,8 +106,8 @@ Dash board /data/0에서 PCAP 파일 다운로드 가능</p>
 <ol>
 <li>DashBoard, ipconfig 내용(/data), Pcap 내용 (각종 디렉토리 경로 파악 가능)</li>
 </ol>
-<p>##$ Analysis
-현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황
+<h2 id="analysis">Analysis</h2>
+<p>현재로 알 수 있는 건 Gunicorn과 각 버전 노출로 인한 ftp, ssh, 겉핡기 식의 서버 내부 상황
 OR WIRESHARK로 인한 패킷 분석</p>
 <h2 id="1-예상-공격-체인">1. 예상 공격 체인</h2>
 <pre tabindex="0"><code>FTP Anonymous -&gt; Gunicorn version find &amp; exploit
@@ -177,6 +168,7 @@ os.system(&#34;/bin/bash&#34;)
         <li><a href="#기능-파악">기능 파악</a></li>
       </ul>
     </li>
+    <li><a href="#analysis">Analysis</a></li>
     <li><a href="#1-예상-공격-체인">1. 예상 공격 체인</a></li>
     <li><a href="#2-각종-시도-후-결과">2. 각종 시도 후 결과</a></li>
     <li><a href="#user-flag">USER FLAG</a>
@@ -205,7 +197,7 @@ os.system(&#34;/bin/bash&#34;)
         <div class="sidebar-widget share-widget">
           <div class="widget-title">Share</div>
           <div class="share-btns">
-            <a href="https://twitter.com/intent/tweet?text=Cap&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fhtb%2fstarting_point%2fcap%2f" target="_blank" class="share-btn twitter">Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=Cap%20-%20Easy%20Machine&url=http%3a%2f%2flocalhost%3a1313%2fposts%2fhtb%2fstarting_point%2fcap%2f" target="_blank" class="share-btn twitter">Twitter</a>
             <button onclick="navigator.clipboard.writeText('http:\/\/localhost:1313\/posts\/htb\/starting_point\/cap\/')" class="share-btn copy" id="copyBtn">Copy Link</button>
           </div>
         </div>
