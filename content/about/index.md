@@ -16,7 +16,7 @@ layout: "about"
 | Web Hacking | SQLi, XSS, SSRF, XXE, IDOR, CSRF |
 | Network | Nmap, Wireshark, Netcat, Burp Suite |
 | IOT | ARDUINO |
-| Crypto | WALLET phrase BruteForce |
+| Crypto | WALLET Phrase BruteForce |
 | OSINT | Maltego, Shodan, Recon-ng |
 | Languages | Python, Bash, C, HTML |
 
